@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: inventario-app
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+      - key: SUPABASE_URL
+        value: https://xxxx.supabase.co        # Reemplaza con tu URL real
+      - key: SUPABASE_ANON_KEY
+        value: eyJhbGciOiJIUzI1...             # Reemplaza con tu clave real
